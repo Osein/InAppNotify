@@ -252,10 +252,7 @@ open class NotificationFactory: UIView,UITextViewDelegate {
     ///   - to: a UIViewController to append the notification
     ///   - completion: a completition callback
     open func build(forAnnouncement announcement: Announcement, to: UIViewController) {
-        
-        //Adjust size based on statusbar
-        NotificationSize.height = UIApplication.shared.isStatusBarHidden ? 70 : 80
-        
+
         //Reset variables
         panGestureActive        = false
         canHide                 = false
