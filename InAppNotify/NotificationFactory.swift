@@ -344,7 +344,7 @@ open class NotificationFactory: UIView,UITextViewDelegate {
     open func setupFramesAndPositionViews(currentWidth:CGFloat,currentHeight:CGFloat) {
         
         //Get current offset based on statusbar
-        let offset: CGFloat = UIApplication.shared.isStatusBarHidden ? 2.5 : 5
+        let offset: CGFloat = (UIApplication.shared.isStatusBarHidden ? 2.5 : 5) + ((UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) > 0 ? 10 : 0)
         
         //Adjust objects frame
         backgroundView.frame.size   = CGSize(width: currentWidth, height: NotificationSize.height)
